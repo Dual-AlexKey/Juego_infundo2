@@ -33,14 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let selectedButton = null;
     let correctMatches = 0;
 
-    var modal2 = document.getElementById('miModal');
-        
-    // Muestra el modal
-    modal2.style.display = 'block';
+    
     // Sonidos
-    const audioCorrecto = new Audio('../audio/correcto.mp3');
-    const audioIncorrecto = new Audio('../audio/incorrecto.mp3');
-    const audioGameOver = new Audio('../audio/gameover.mp3');
+    const audioCorrecto = new Audio('../../audio/correcto.mp3');
+    const audioIncorrecto = new Audio('../../audio/incorrecto.mp3');
+    const audioGameOver = new Audio('../../audio/gameover.mp3');
 
     buttons.forEach(button => {
         button.addEventListener('click', selectWord);
