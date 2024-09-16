@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
   <!-- Icono -->
-  <link rel="shortcut icon" href="/imagen/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./imagen/logo.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -29,19 +29,19 @@
   <div class="orange-container ">
     <div class="button-container bloque1">
       <button id="btn1" class="animated-button unlocked" data-module="1">MODULO 1</button>
-      <button id="btn2" class="animated-button unlocked" data-module="2">MODULO 2</button>
-      <button id="btn3" class="animated-button unlocked" data-module="3">MODULO 3</button>
-      <button id="btn4" class="animated-button unlocked" data-module="4">MODULO 4</button>
-      <button id="btn5" class="animated-button unlocked" data-module="5">MODULO 5</button>
-      <button id="btn6" class="animated-button unlocked" data-module="6">MODULO 6</button>
+      <button id="btn2" class="animated-button locked" data-module="2">MODULO 2</button>
+      <button id="btn3" class="animated-button locked" data-module="3">MODULO 3</button>
+      <button id="btn4" class="animated-button locked" data-module="4">MODULO 4</button>
+      <button id="btn5" class="animated-button locked" data-module="5">MODULO 5</button>
+      <button id="btn6" class="animated-button locked" data-module="6">MODULO 6</button>
     </div>
     <div class="button-container bloque2" style="display: none;">
-      <button id="btn7" class="animated-button unlocked" data-module="7">MODULO 7</button>
-      <button id="btn8" class="animated-button unlocked" data-module="8">MODULO 8</button>
-      <button id="btn9" class="animated-button unlocked" data-module="9">MODULO 9</button>
-      <button id="btn10" class="animated-button unlocked" data-module="10">MODULO 10</button>
-      <button id="btn11" class="animated-button unlocked" data-module="11">MODULO 11</button>
-      <button id="btn12" class="animated-button unlocked" data-module="12">MODULO 12</button>
+      <button id="btn7" class="animated-button locked" data-module="7">MODULO 7</button>
+      <button id="btn8" class="animated-button locked" data-module="8">MODULO 8</button>
+      <button id="btn9" class="animated-button locked" data-module="9">MODULO 9</button>
+      <button id="btn10" class="animated-button locked" data-module="10">MODULO 10</button>
+      <button id="btn11" class="animated-button locked" data-module="11">MODULO 11</button>
+      <button id="btn12" class="animated-button locked" data-module="12">MODULO 12</button>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="flecha-img" id="flecha">
       <!-- Parte externa de la flecha (sin color asignado) -->
@@ -54,11 +54,9 @@
   </div>
 
   <!-- Audio -->
-  <audio id="hoverSound" src=".//audio/sonido.mp3"></audio>
-  <audio id="flechaSound" src=".//audio/next.mp3"></audio>
-  <audio id="audioElement" autoplay loop>
-    <source src=".//audio/inicio.mp3" type="audio/mp3">
-  </audio>
+  <audio id="hoverSound" src="./audio/sonido.mp3"></audio>
+  <audio id="flechaSound" src="./audio/next.mp3"></audio>
+  <audio id="audioElement" src="./audio/inicio.mp3"></audio>
 
   <!-- Script -->
   <script src="script.js"></script>

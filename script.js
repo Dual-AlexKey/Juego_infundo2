@@ -3,19 +3,20 @@ var flechaSound = document.getElementById('flechaSound');
 
 document.getElementById('flecha').addEventListener('click', function() {
     flechaSound.currentTime = 0;
-    flechaSound.volume = 0.1;
+    flechaSound.volume = 0.4;
     flechaSound.play();
 
-    const bloque1 = document.querySelector('.bloque1');
     const bloque2 = document.querySelector('.bloque2');
+    const bloque1 = document.querySelector('.bloque1');
+
 
     if (bloque1.style.display === 'block') {
-        bloque1.style.display = 'none';
         bloque2.style.display = 'block';
+        bloque1.style.display = 'none';
         document.getElementById('flecha').style.transform = 'rotate(180deg)';
     } else {
-        bloque1.style.display = 'block';
         bloque2.style.display = 'none';
+        bloque1.style.display = 'block';
         document.getElementById('flecha').style.transform = 'rotate(0deg)';
     }
 });
@@ -66,5 +67,7 @@ document.getElementById('btn10').addEventListener('click', handleModule);
 document.getElementById('btn11').addEventListener('click', handleModule);
 document.getElementById('btn12').addEventListener('click', handleModule);
 
+
 var audio = document.getElementById('audioElement');
 audio.volume = 0.3;
+audio.play();
