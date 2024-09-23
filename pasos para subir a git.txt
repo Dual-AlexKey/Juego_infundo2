@@ -1,0 +1,14 @@
+git init
+git add . (repetir si sale error)
+git status (revisar si esta para seguir)
+git commit -m "Subir" (archivo de subida)
+git push origin ## (## = rama de github)
+
+recuerda si vas a subir revisar la rama de donde estas subiendo
+
+listado de rama
+git branch list
+cambio de rama
+git checkout ## (## = rama de github)
+borrar rama
+git branch -d ## (## = rama de github)(solo lo borra de git hay que borrarla tambien de github)
