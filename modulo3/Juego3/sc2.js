@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedButton = null;
     }
 
-
     function updateLives() {
         const hearts = document.querySelectorAll('.heart');
         if (attempts <= maxAttempts) {
