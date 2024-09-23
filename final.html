@@ -30,7 +30,7 @@
         <h1>
             ¡Felicidades, has completado todos los desafíos del modulo!
         </h1>
-        <center><img src="../../imagen/corona.jpg" alt="corona" class="corona"></center>
+        <center><img src="imagen/corona.jpg" alt="corona" class="corona"></center>
 
         <center>
             <img src="./imagen/estrella.png" alt="estrella1" class="estrella" id="estrella1">
@@ -79,8 +79,6 @@
             mostrarEstrella(0);
 
             // Guardar el progreso en localStorage
-            let currentModule = parseInt(localStorage.getItem('currentModule')) || 1;
-            localStorage.setItem('currentModule', currentModule + 1);
         });
         var audio = document.getElementById('audioElement');
         audio.volume = 0.2;
