@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.classList.add("show");            
             flecha.addEventListener('click', () => {
                 window.location.href = '../../final.html'; // Redirige a final.html al hacer clic en la flecha
+                let currentModule = parseInt(localStorage.getItem('currentModule')) || 1;
+                localStorage.setItem('currentModule', currentModule + 1);
             });
             setTimeout(() => {
                 modal.classList.remove("show");
@@ -125,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const gameOverModal = document.querySelector('#gameOverModal');
         gameOverModal.style.display = 'block';
         document.querySelector('#reintentarBtn').addEventListener('click', () => location.reload());
-        document.querySelector('#salirBtn').addEventListener('click', () => window.location.href = '../index.html');
+        document.querySelector('#salirBtn').addEventListener('click', () => window.location.href = '../../index.html');
     }
 
     function animateHeartDisappearance(heart) {
