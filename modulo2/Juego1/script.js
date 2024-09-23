@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     reintentarBtn.addEventListener('click', () => window.location.reload());
-    salirBtn.addEventListener('click', () => window.location.href = '../index.html');
+    salirBtn.addEventListener('click', () => window.location.href = '../../index.html');
 
     function toggleSound() {
         audio.volume = isMuted ? 0.03 : 0;

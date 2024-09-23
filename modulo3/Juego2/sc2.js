@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const gameOverModal = document.querySelector('#gameOverModal');
         gameOverModal.style.display = 'block';
         document.querySelector('#reintentarBtn').addEventListener('click', () => location.reload());
-        document.querySelector('#salirBtn').addEventListener('click', () => window.location.href = '../index.html');
+        document.querySelector('#salirBtn').addEventListener('click', () => window.location.href = '../../index.html');
     }
 
     function animateHeartDisappearance(heart) {
