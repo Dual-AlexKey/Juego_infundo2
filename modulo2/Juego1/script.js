@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const reintentarBtn = document.getElementById('reintentarBtn');
     const salirBtn = document.getElementById('salirBtn');
 
-    const audioCorrecto = new Audio('../audio/correcto.mp3');
-    const audioIncorrecto = new Audio('../audio/incorrecto.mp3');
-    const audioGameOver = new Audio('..audio/gameover.mp3');
+    const audioCorrecto = new Audio('../../audio/correcto.mp3');
+    const audioIncorrecto = new Audio('../../audio/incorrecto.mp3');
+    const audioGameOver = new Audio('../../audio/gameover.mp3');
     audio.volume = 0.03;
     audioGameOver.volume = 0.5;
 
@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedCard.classList.add('destroyed');
         selectedWord.classList.add('destroyed');
         selectedCard.removeEventListener('click', selectCard);
+        playSound(audioCorrecto);
         selectedCard = null;
         selectedWord = null;
         matchedPairs++;
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 modal.classList.add("show");
                 arrowIcon.style.display = 'inline-block';
                 arrowIcon.addEventListener('click', function() {
-                    window.location.href = 'game2.html';
+                    window.location.href = '../Juego2/game2.html';
                 });
     
                 // Ocultar el modal después de 10 segundos

@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.style.display="flex";
             modal.classList.add("show");            
             flecha.addEventListener('click', () => {
-                window.location.href = '../../game3.html'; // Redirige a final.html al hacer clic en la flecha
+                window.location.href = '../Juego3/game3.html'; // Redirige a final.html al hacer clic en la flecha
             });
             setTimeout(() => {
                 modal.classList.remove("show");
