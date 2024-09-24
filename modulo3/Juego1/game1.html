@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reto 3</title>
+    <title>Reto 2</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 <body>
 
     <div class="container">
-        <p class="texto">¡Reto 3: Completa el uso del modo "<em>por</em>" y "<em>para</em>" correcto.</p>
+        <p class="texto">¡Reto 2: Completa el verbo "<em>reflexivo</em>" y verbo "<em>le</em>" correcto.</p>
         <div class="info">
             <p style="color: #D67D7D;">Vidas</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: rgba(214, 125, 125, 1);" class="heart">
@@ -44,27 +44,14 @@
         </svg>
 
     </div>
-
-    <div class="oraciones">
-        <p>1. Una decisíon es democratica cuando es acepta <span class="contenedor" data-word="1"></span> la mayoria.</p>
-        <p>2. Me encantan las películas <span class="contenedor" data-word="4"></span> niños porque son muy divertidas.</p>
-        <p>3. La piramide de Chichén Itzá fue construida <span class="contenedor" data-word="5"></span> los Mayas.</p>
-        <p>4. ¿Tienes 8 años? Entonces,eres muy listo <span class="contenedor" data-word="8"></span> su edad.</p>
-
+    <div id="game-container">
+        <div id="center" class="box">?</div>
+        <img id="top" class="box" src="../../imagen/amoroso.png" alt="Amoroso">
+        <img id="bottom" class="box" src="../../imagen/presumido.png" alt="Presumido">
+        <img id="left" class="box" src="../../imagen/timido.png" alt="Tímido">
+        <img id="right" class="box" src="../../imagen/comprensivo.png" alt="Comprensivo">
     </div>
-<div class="botones" id ="botones-container">
-    <button class="boton" data-word="1">por</button>
-    <button class="boton" data-word="3">por</button>
-    <button class="boton" data-word="5">por</button>
-    <button class="boton" data-word="7">por</button>
-</div>
-    <div class="bottones" id="botones-container">
-        <button class="boton" data-word="2">para</button>
-        <button class="boton" data-word="4">para</button>
-        <button class="boton" data-word="6">para</button>
-        <button class="boton" data-word="8">para</button>
-    </div>
-
+    
    <!-- <img src="../../imagen/dato1.png" alt="dato1" class="imagendato">-->
 
     <!-- Modal -->
@@ -83,39 +70,39 @@
             <div class="cerrar-container">
                 <span class="cerrar">&times;</span>
             </div>
-            <h2>Gramática: por y para</h2>
-            <p>el verbo <em><b>por</b></em> lo usamos para indicar duración de una actividad mientras que el verbo <em><b>para</b></em> lo usamos cuando indicamos situaciones opuestas</p>
+            <h2>Gramática: Condicional </h2>
+            <p>Lo usamos para expresar acciones hipotéticas o posibles, dependiendo de ciertas condiciones, usando <em>ía</em> en verbos. </p>
 
             <table class="tabla-verbo">
                 <tr>
                     <th>Pronombre</th>
-                    <th>Por</th>
-                    <th>Para</th>
+                    <th>Condicional</th>
+                    <th>Descripción</th>
                 </tr>
                 <tr>
                     <td>Yo</td>
-                    <td>Yo lo hice por ti</td>
-                    <td>Yo hice este regalo es para ti</td>
+                    <td>Compraria</td>
+                    <td>Un regalo</td>
                 </tr>
                 <tr>
                     <td>Tú</td>
-                    <td>Tú lo haces por ellos</td>
-                    <td>Tú proyecto se entrega para mañana</td>
+                    <td>Comprarias</td>
+                    <td>La hamburquesa</td>
                 </tr>
                 <tr>
                     <td>Él/ella/usted</td>
-                    <td>Ella lo haría por amor</td>
-                    <td>El libro es para ti</td>
+                    <td>Compraria</td>
+                    <td>La cena</td>
                 </tr>
                 <tr>
                     <td>Nosotros/as</td>
-                    <td>Nosotros lo hacemos por diversión</td>
-                    <td>Nosotras vamos para el parque</td>
+                    <td>Comprariamos</td>
+                    <td>La despensa</td>
                 </tr>
                 <tr>
                     <td>Ellos/ellas/ustedes</td>
-                    <td>Ellos lo hicieron por el equipo</td>
-                    <td>Ellas hicieron el plan para todos</td>
+                    <td>Comprarian</td>
+                    <td>Una casa</td>
                 </tr>
             </table>
         </div>
@@ -124,12 +111,12 @@
     <div id="modal" class="modalNext">
         <div class="modalNext-content">
             <p>¡BUEN TRABAJO!</p>
-            <p>¡RETO 3 COMPLETADO!</p>
+            <p>¡RETO 2 COMPLETADO!</p>
         </div>
     </div>
 
     <audio id="audioElement" autoplay loop>
-        <source src="../../audio/level.mp3" type="audio/mp3">
+        <source src="../audio/level.mp3" type="audio/mp3">
     </audio>
 
     <svg id="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">

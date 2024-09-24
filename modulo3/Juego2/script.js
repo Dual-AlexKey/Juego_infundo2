@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ArrowRight: positions.right
     };
 
-    const characteristics = ["Amoroso", "Presumido", "Tímido", "Comprensivo"];
+    const characteristics = ["Rizado", "Elegante", "Guapo", "Delgado"];
     const targetPositions = ["top", "bottom", "left", "right"];
     let remainingCharacteristics = [...characteristics];
 
