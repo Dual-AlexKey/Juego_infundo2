@@ -1,11 +1,7 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #FBF2F2;
 }
 
 .container {
@@ -16,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-block: 10px;
+    margin-top: 30px;
     margin-left: 30px;
     padding: 0 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -90,10 +86,10 @@ body {
 .contenedor {
     display: inline-block;
     vertical-align: middle;
-    width: 100px;
+    width: 99px;
     height: 40px;
     border: 1px solid #000;
-    margin: 0 2px;
+    margin: 0 5px;
     border-radius: 2cap;
     position: relative;
     background-color: white;
@@ -115,8 +111,8 @@ body {
 }
 
 .botones {
-    margin-top: 50px;
-    margin-right: 220px;
+    margin-top: 80px;
+    margin-left: 10%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -124,37 +120,17 @@ body {
 }
 
 .botones button {
+    margin-bottom: 15px;
     border-radius: 4cap;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     width: 120px;
     height: 40px;
+    margin-right: 15px;
     box-shadow: 0px 0px 10px rgba(6, 101, 202, 0.5);
     background-color: rgb(211, 229, 245);
 }
-
-/*button2*/
-.bottones {
-    margin-top: 50px;
-    margin-right: 32px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.bottones button {
-    border-radius: 4cap;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 120px;
-    height: 40px;
-    box-shadow: 0px 0px 10px rgba(6, 101, 202, 0.5);
-    background-color: rgb(211, 229, 245);
-}
-
 
 .botones button:hover {
     background-color: rgb(81, 157, 224);
@@ -472,7 +448,7 @@ ul li {
 
     .container {
         max-width: 1289px;
-        height: 100px;  
+        height: 100px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -529,7 +505,7 @@ ul li {
 
     .botones {
         margin-top: 50px;
-        margin-right: 220px;
+        margin-right: 320px;
         float: right;
         flex-direction: column;
 
@@ -538,19 +514,6 @@ ul li {
     .botones button {
         margin-bottom: 45px;
     }
-
-    .bottones {
-        margin-top: 50px;
-        margin-right: 32px;
-        float: right;
-        flex-direction: column;
-
-    }
-
-    .bottones button {
-        margin-bottom: 45px;
-    }
-    
 
     .img {
         margin-top: 15px;
@@ -577,47 +540,3 @@ ul li {
 
     /* Regresar al tamaño original al final de la animación */
 }
-
-#game-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    background-color: white;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: vibrarLogo 1s infinite alternate;
-}
-
-#info-container {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.box {
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    border: 2px solid black;
-    background-color: lightblue;
-    transition: left 0.2s, top 0.2s;
-    object-fit: cover;
-}
-
-#center {
-    background-color: lightgreen;
-    z-index: 1;
-    left: 160px;
-    top: 160px;
-}
-
-#top { top: 10px; left: 160px; }
-#bottom { bottom: 10px; left: 160px; }
-#left { left: 10px; top: 160px; }
-#right { right: 10px; top: 160px; }

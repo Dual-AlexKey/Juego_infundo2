@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reto 1</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Reto 3</title>
+    <link rel="stylesheet" href="estilo2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 <body>
 
     <div class="container">
-        <p class="texto">¡Reto 1: selecciona o mueve la imagen hasta la caracteristica correcta.</p>
+        <p class="texto">¡Reto 3: Completa la frase con la <em>perifrasis</em> verbal correcta.</p>
         <div class="info">
             <p style="color: #D67D7D;">Vidas</p>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: rgba(214, 125, 125, 1);" class="heart">
@@ -34,25 +34,25 @@
             </svg>
 
         </div>
-        <svg id="abrirModal" class="icono-ayuda" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
-            viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" class="feather feather-help-circle" cursor="pointer">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M9.09 9a3 3 0 1 1 5.83 1c0 2-3 3-3 3"></path>
-            <line x1="12" y1="17" x2="12" y2="17"></line>
+        
+    </div>
 
-        </svg>
+    <div class="oraciones">
+        <p>1. El profesor <span class="contenedor" data-word="2"></span> el tema cuando sono la campana.</p>
+        <p>2. Ellos <span class="contenedor" data-word="1"></span> apesar del ruido de la biblioteca.</p>
+        <p>3. El coche <span class="contenedor" data-word="5"></span> en medio del camino.</p>
+        <p>4. Yo <span class="contenedor" data-word="3"></span> a Marta, pero decidí enviarle un mensaje</p>
 
     </div>
-    <div id="game-container">
-        <div id="center" class="box">?</div>
-        <img id="top" class="box" src="../../imagen/amoroso.png" alt="Amoroso">
-        <img id="bottom" class="box" src="../../imagen/presumido.png" alt="Presumido">
-        <img id="left" class="box" src="../../imagen/timido.png" alt="Tímido">
-        <img id="right" class="box" src="../../imagen/comprensivo.png" alt="Comprensivo">
+
+    <div class="botones" id="botones-container">
+        <button class="boton" data-word="1">siguen estudiando</button>
+        <button class="boton" data-word="2">dejo de enseñar</button>
+        <button class="boton" data-word="3">iba a llamar</button>
+        <button class="boton" data-word="5">dejo de funcionar</button>
     </div>
-    
-   <!-- <img src="../../imagen/dato1.png" alt="dato1" class="imagendato">-->
+
+    <img src="../../imagen/dato3.png" alt="dato2" class="imagendato">
 
     <!-- Modal -->
     <div id="gameOverModal" class="modal">
@@ -65,58 +65,17 @@
         </div>
     </div>
     <!-- Modal -->
-    <div id="miModal" class="modaldato">
-        <div class="modal-contenido">
-            <div class="cerrar-container">
-                <span class="cerrar">&times;</span>
-            </div>
-            <h2>Gramática: Condicional </h2>
-            <p>Lo usamos para expresar acciones hipotéticas o posibles, dependiendo de ciertas condiciones, usando <em>ía</em> en verbos. </p>
-
-            <table class="tabla-verbo">
-                <tr>
-                    <th>Pronombre</th>
-                    <th>Condicional</th>
-                    <th>Descripción</th>
-                </tr>
-                <tr>
-                    <td>Yo</td>
-                    <td>Compraria</td>
-                    <td>Un regalo</td>
-                </tr>
-                <tr>
-                    <td>Tú</td>
-                    <td>Comprarias</td>
-                    <td>La hamburquesa</td>
-                </tr>
-                <tr>
-                    <td>Él/ella/usted</td>
-                    <td>Compraria</td>
-                    <td>La cena</td>
-                </tr>
-                <tr>
-                    <td>Nosotros/as</td>
-                    <td>Comprariamos</td>
-                    <td>La despensa</td>
-                </tr>
-                <tr>
-                    <td>Ellos/ellas/ustedes</td>
-                    <td>Comprarian</td>
-                    <td>Una casa</td>
-                </tr>
-            </table>
-        </div>
-    </div>
+   
 
     <div id="modal" class="modalNext">
         <div class="modalNext-content">
             <p>¡BUEN TRABAJO!</p>
-            <p>¡RETO 2 COMPLETADO!</p>
+            <p>¡RETO 3 COMPLETADO!</p>
         </div>
     </div>
 
     <audio id="audioElement" autoplay loop>
-        <source src="../../audio/level.mp3" type="audio/mp3">
+        <source src="../audio/level.mp3" type="audio/mp3">
     </audio>
 
     <svg id="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -153,7 +112,7 @@
             fill="#0F0F0F" />
     </svg>
 
-    <script src="script.js"></script>
+    <script src="sc2.js"></script>
 </body>
 
 </html>

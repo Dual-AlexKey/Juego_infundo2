@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     audioGameOver.volume = 0.5;
 
     function playSound(sound) {
-        sound.pause(); // Detener el sonido actual antes de reproducirlo nuevamente
-        sound.currentTime = 0; // Reiniciar el tiempo de reproducción al principio
-        sound.play(); // Reproducir el sonido
+        sound.pause();
+        sound.currentTime = 0;
+        sound.play();
     }
 
     soundIcon.addEventListener('click', toggleSound);
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxAttempts = 3;
 
     const directions = {
-        ArrowUp: positions.top,
-        ArrowDown: positions.bottom,
-        ArrowLeft: positions.left,
-        ArrowRight: positions.right
+        ArrowUp: 'top',
+        ArrowDown: 'bottom',
+        ArrowLeft: 'left',
+        ArrowRight: 'right'
     };
 
     const characteristics = ["Rizado", "Elegante", "Guapo", "Delgado"];
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.add("show");
             arrowIcon.style.display = 'inline-block';
             arrowIcon.addEventListener('click', function() {
-                window.location.href = '../Juego3/game3.html';
+                window.location.href = '../Juego2/game2.html';
             });
 
             setTimeout(() => {
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleClick(targetPosition) {
         if (!gameOver) {
-            checkWin(targetPosition); // Ahora solo verifica si la imagen corresponde al objetivo sin mover el cuadro
+            checkWin(targetPosition); // Verificar si la imagen corresponde al objetivo sin mover el cuadro
         }
     }
 
@@ -159,13 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Control con teclas del teclado
     document.addEventListener('keydown', (e) => {
         if (!gameOver && directions[e.key]) {
-            currentPos = directions[e.key];
+            const targetPosition = directions[e.key]; // Obtener la posición objetivo basada en la tecla presionada
+            currentPos = positions[targetPosition]; // Mover la caja central a la posición correspondiente
             centerBox.style.left = currentPos.left;
             centerBox.style.top = currentPos.top;
-            checkWin(centerBox.getAttribute('data-target'));
+            checkWin(targetPosition); // Verificar si la posición es la correcta
         }
     });
 
     setRandomCharacteristic();
 });
-
