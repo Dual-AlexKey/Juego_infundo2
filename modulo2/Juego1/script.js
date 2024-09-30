@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const audioCorrecto = new Audio('../../audio/correcto.mp3');
     const audioIncorrecto = new Audio('../../audio/incorrecto.mp3');
-    const audioGameOver = new Audio('../../audio/gameover.mp3');
+    const audioGameOver = new Audio('../..audio/gameover.mp3');
     audio.volume = 0.03;
     audioGameOver.volume = 0.5;
 
@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedCard.classList.add('destroyed');
         selectedWord.classList.add('destroyed');
         selectedCard.removeEventListener('click', selectCard);
-        playSound(audioCorrecto);
         selectedCard = null;
         selectedWord = null;
         matchedPairs++;
