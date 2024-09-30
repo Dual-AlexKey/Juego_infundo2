@@ -86,7 +86,7 @@ body {
 .contenedor {
     display: inline-block;
     vertical-align: middle;
-    width: 89px;
+    width: 100px;
     height: 40px;
     border: 1px solid #000;
     margin: 0 5px;
@@ -104,7 +104,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90px;
+    width: 101px;
     height: 40px;
     border-radius: 2cap;
     font-size: 18px;
