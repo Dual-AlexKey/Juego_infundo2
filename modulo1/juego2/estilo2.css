@@ -531,8 +531,8 @@ ul li {
     .container {
         max-width: 100%; /* Ajustar a 100% en pantallas más pequeñas */
         height: auto;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto; /* Centrar el contenedor */
+        padding: 10px; /* Agregar relleno interno */
     }
 
     .modalNext-content p {
@@ -541,15 +541,15 @@ ul li {
 
     .texto {
         font-size: 16px; /* Reducir tamaño de texto */
+        margin: 0 5%; /* Ajustar márgenes laterales */
     }
 
     .imagendato {
-        display: auto;
+        display: flex;
         position: relative; /* Ajustar posición */
         width: 150px; /* Reducir ancho de la imagen */
         height: auto;
-        margin-left: auto; /* Centrar en pantallas pequeñas */
-        margin-top: 5%;
+        margin: 5% auto; /* Centrar imagen y ajustar margen superior */
     }
 
     .info {
@@ -578,7 +578,7 @@ ul li {
     }
 
     .oraciones {
-        margin-left: 5%; /* Ajustar márgenes */
+        margin: 20px 5%; /* Ajustar márgenes superior e inferior, y reducir laterales */
         float: none;
     }
 
@@ -587,8 +587,7 @@ ul li {
     }
 
     .botones {
-        margin-top: 30px; /* Reducir margen superior */
-        margin-right: auto; /* Centrando los botones */
+        margin: 30px auto; /* Centrando y ajustando márgenes */
         float: none;
         flex-direction: row; /* Cambiar dirección a fila */
         justify-content: center; /* Centrar los botones */
@@ -604,6 +603,7 @@ ul li {
         margin-top: 10px;
     }
 }
+
 @keyframes zoomAnimacion {
     0% {
         transform: scale(1);
