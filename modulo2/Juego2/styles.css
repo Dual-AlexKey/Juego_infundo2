@@ -467,8 +467,8 @@ ul li {
     }
 
     .container {
-        max-width: 1289px;
-        height: 100px;
+        max-width: 90%;
+        height: 40%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -525,10 +525,10 @@ ul li {
 
     .botones {
         margin-top: 50px;
-        margin-right: 220px;
+        margin-right: 15%;
         float: right;
         flex-direction: column;
-
+        font-size: 10%
     }
 
     .botones button {
@@ -537,7 +537,7 @@ ul li {
 
     .bottones {
         margin-top: 50px;
-        margin-right: 32px;
+        margin-right: 5%;
         float: right;
         flex-direction: column;
 

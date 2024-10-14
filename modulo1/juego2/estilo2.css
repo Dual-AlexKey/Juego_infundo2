@@ -522,7 +522,88 @@ ul li {
 
 
 }
+@media (max-width: 1310px) {
 
+    body {
+        margin: 0;
+    }
+
+    .container {
+        max-width: 100%; /* Ajustar a 100% en pantallas más pequeñas */
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .modalNext-content p {
+        font-size: 1.2em; /* Reducir tamaño de fuente */
+    }
+
+    .texto {
+        font-size: 16px; /* Reducir tamaño de texto */
+    }
+
+    .imagendato {
+        display: auto;
+        position: relative; /* Ajustar posición */
+        width: 150px; /* Reducir ancho de la imagen */
+        height: auto;
+        margin-left: auto; /* Centrar en pantallas pequeñas */
+        margin-top: 5%;
+    }
+
+    .info {
+        margin-left: auto;
+        padding: 5px;
+        width: 100px; /* Reducir ancho del contenedor de info */
+        height: 18px;
+        align-items: center;
+        border: 2px solid #FFFFFF;
+        display: flex;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    .info p {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px; /* Reducir tamaño de fuente */
+        font-weight: 800;
+        display: block;
+    }
+
+    .info svg {
+        width: 18px; /* Ajustar tamaño del ícono */
+        height: 18px;
+        margin-left: 5px;
+    }
+
+    .oraciones {
+        margin-left: 5%; /* Ajustar márgenes */
+        float: none;
+    }
+
+    .oraciones p {
+        font-size: 18px; /* Reducir tamaño de texto */
+    }
+
+    .botones {
+        margin-top: 30px; /* Reducir margen superior */
+        margin-right: auto; /* Centrando los botones */
+        float: none;
+        flex-direction: row; /* Cambiar dirección a fila */
+        justify-content: center; /* Centrar los botones */
+    }
+
+    .botones button {
+        margin-bottom: 20px;
+        width: 100px; /* Ajustar el tamaño de los botones */
+        height: 35px;
+    }
+
+    .img {
+        margin-top: 10px;
+    }
+}
 @keyframes zoomAnimacion {
     0% {
         transform: scale(1);
