@@ -480,6 +480,7 @@ ul li {
         background-color: #FFFFFF;
         border-radius: 10px;
     }
+
     .info p {
         font-family: 'Inter', sans-serif;
         font-size: 16px;
@@ -508,7 +509,6 @@ ul li {
         margin-right: 30%;
         float: right;
         flex-direction: column;
-
     }
 
     .botones button {
