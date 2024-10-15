@@ -30,6 +30,29 @@ const maxAttempts = 4;
 
 soundIcon.addEventListener('click', toggleSound);
 muteIcon.addEventListener('click', toggleSound);
+//modals
+var modal2 = document.getElementById('miModal');
+modal2.style.display = 'block';
+const modal = document.getElementById('miModal');
+const iconoAyuda = document.getElementById('abrirModal');
+
+// Obtener el botón para cerrar el modal
+const btnCerrarModal = document.getElementsByClassName('cerrar')[0];
+iconoAyuda.addEventListener('click', () => {
+    modal.style.display = 'block';
+  });
+  
+  // Función para cerrar el modal al hacer clic en el botón de cerrar
+  btnCerrarModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+  window.addEventListener('click', (evento) => {
+    if (evento.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+//fin modals
+  
 
 cards.forEach(card => {
     card.addEventListener('click', selectCard);

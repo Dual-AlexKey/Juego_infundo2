@@ -60,7 +60,7 @@ body {
 }
 
 .oraciones p {
-    margin-bottom: 40px;
+    margin-bottom: 75px;
     font-size: 20px;
 }
 
@@ -125,7 +125,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     width: 120px;
-    height: 40px;
+    height: 55px;
     box-shadow: 0px 0px 10px rgba(6, 101, 202, 0.5);
     background-color: rgb(211, 229, 245);
 }
@@ -146,7 +146,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     width: 120px;
-    height: 40px;
+    height: 55px;
     box-shadow: 0px 0px 10px rgba(6, 101, 202, 0.5);
     background-color: rgb(211, 229, 245);
 }
@@ -301,17 +301,7 @@ body {
     margin-bottom: 10px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
 
-ul li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #FFF;
-    /* Texto blanco */
-}
 
 .modalp {
     font-size: 16px;
@@ -459,6 +449,7 @@ ul li {
     }
 }
 
+
 @media (min-width: 1310px) {
 
 
@@ -467,8 +458,8 @@ ul li {
     }
 
     .container {
-        max-width: 90%;
-        height: 40%;
+        max-width: 1289px;
+        height: 100px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -482,9 +473,9 @@ ul li {
     .imagendato {
         display: flex;
         position: absolute;
-        width: 200px;
+        width: 250px;
         height: auto;
-        margin-left: 80%;
+        margin-left: 75%;
         margin-top: 8%;
         animation: zoomAnimacion 5s infinite alternate;
     }
@@ -516,23 +507,24 @@ ul li {
 
     .oraciones {
         margin-left: 10%;
+        margin-top: 30px;
         float: left;
     }
 
     .oraciones p {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .botones {
         margin-top: 50px;
-        margin-right: 15%;
+        margin-right: 7%;
         float: right;
         flex-direction: column;
         font-size: 10%
     }
 
     .botones button {
-        margin-bottom: 45px;
+        margin-bottom: 63px;
     }
 
     .bottones {
@@ -542,19 +534,106 @@ ul li {
         flex-direction: column;
 
     }
-
     .bottones button {
-        margin-bottom: 45px;
+        margin-bottom: 63px;
     }
     
+}
+@media (max-width: 1310px) {
 
-    .img {
-        margin-top: 15px;
+    body {
+        margin: 0;
     }
 
+    .container {
+        max-width: 100%; /* Ajustar a 100% en pantallas más pequeñas */
+        height: auto;
+        margin-left: auto;
+        margin-right: auto; /* Centrar el contenedor */
+        padding: 10px; /* Agregar relleno interno */
+    }
 
+    .modalNext-content p {
+        font-size: 1.2em; /* Reducir tamaño de fuente */
+    }
+
+    .texto {
+        font-size: 18px; /* Reducir tamaño de texto */
+    }
+
+    .imagendato {
+        display: flex;
+        position: relative; /* Ajustar posición */
+        width: 190px; /* Reducir ancho de la imagen */
+        height: auto;
+        margin-left: 75%;
+        margin-top: -30%; /* Centrar imagen y ajustar margen superior */
+        animation: zoomAnimacion 5s infinite alternate;
+    }
+
+    .info {
+        margin-left: auto;
+        padding: 5px;
+        width: 100px; /* Reducir ancho del contenedor de info */
+        height: 18px;
+        align-items: center;
+        border: 2px solid #FFFFFF;
+        display: flex;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    .info p {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px; /* Reducir tamaño de fuente */
+        font-weight: 800;
+        display: block;
+    }
+
+    .info svg {
+        width: 18px; /* Ajustar tamaño del ícono */
+        height: 18px;
+        margin-left: 5px;
+    }
+
+    .oraciones {
+        margin-top: 30px;
+        margin-left: 25%;
+        float: none;
+    }
+
+    .oraciones p {
+        font-size: 18px; /* Reducir tamaño de texto */
+    }
+
+    .botones {
+        margin: 30px auto; /* Centrando y ajustando márgenes */
+        float: none;
+        flex-direction: row; /* Cambiar dirección a fila */
+        justify-content: center; /* Centrar los botones */
+    }
+
+    .botones button {
+        margin-bottom: 20px;
+        width: 150px; /* Ajustar el tamaño de los botones */
+        height: 45px;
+    }
+    .bottones {
+        margin: 30px auto; /* Centrando y ajustando márgenes */
+        float: none;
+        flex-direction: row; /* Cambiar dirección a fila */
+        justify-content: center; /* Centrar los botones */
+    }
+
+    .bottones button {
+        margin-bottom: 20px;
+        width: 150px; /* Ajustar el tamaño de los botones */
+        height: 45px;
+    }
 
 }
+
+
 
 @keyframes zoomAnimacion {
     0% {
