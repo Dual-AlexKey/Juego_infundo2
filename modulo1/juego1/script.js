@@ -23,10 +23,10 @@ let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
 let matchedPairs = 0;
-let lives = 4; // Número inicial de vidas
+let lives = 5; // Número inicial de vidas
 let attempts = 0;
 const totalPairs = 6;
-const maxAttempts = 4;
+const maxAttempts = 5;
 
 soundIcon.addEventListener('click', toggleSound);
 muteIcon.addEventListener('click', toggleSound);
