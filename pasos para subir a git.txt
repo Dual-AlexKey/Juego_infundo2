@@ -12,3 +12,7 @@ cambio de rama
 git checkout ## (## = rama de github)
 borrar rama
 git branch -d ## (## = rama de github)(solo lo borra de git hay que borrarla tambien de github)
+
+
+crear carpeta remota
+git remote add origin //Link de repositorio del gituhub
