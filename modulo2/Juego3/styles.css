@@ -60,7 +60,6 @@ body {
 }
 
 .oraciones p {
-    margin-bottom: 75px;
     font-size: 20px;
 }
 
@@ -522,6 +521,7 @@ ul li {
 
     .oraciones p {
         font-size: 25px;
+        margin-bottom: 75px;
     }
 
     .botones {
@@ -613,6 +613,8 @@ ul li {
 
     .oraciones p {
         font-size: 18px; /* Reducir tamaño de texto */
+        margin-bottom: 25px;
+
     }
 
     .botones {

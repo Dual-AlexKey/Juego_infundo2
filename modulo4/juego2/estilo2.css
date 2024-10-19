@@ -439,7 +439,7 @@ ul li {
     }
 }
 
-@media (min-width: 1310px) {
+@media (min-width: 1540px) {
 
 
     body {
@@ -516,7 +516,7 @@ ul li {
         font-size: 16px;
     }
 }
-@media (max-width: 1310px) {
+@media (max-width: 1540px) {
 
     body {
         margin: 0;
@@ -584,7 +584,7 @@ ul li {
     }
 
     .botones {
-        margin: 30px auto; /* Centrando y ajustando márgenes */
+        margin: 30px ; /* Centrando y ajustando márgenes */
         float: none;
         flex-direction: row; /* Cambiar dirección a fila */
         justify-content: center; /* Centrar los botones */
@@ -592,8 +592,8 @@ ul li {
 
     .botones button {
         margin-bottom: 20px;
-        width: 100px; /* Ajustar el tamaño de los botones */
-        height: 35px;
+        width: 110px; /* Ajustar el tamaño de los botones */
+        height: 50px;
     }
 
 }

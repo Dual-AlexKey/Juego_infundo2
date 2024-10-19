@@ -28,37 +28,31 @@
             <div class="hearts-container">
                 <p2>Vidas</p2>
 
-                <span class="heart">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                        style="fill: rgba(214, 125, 125, 1);">
-                        <path
-                            d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                    </svg>
-                </span>
-                <span class="heart">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                        style="fill: rgba(214, 125, 125, 1);">
-                        <path
-                            d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                    </svg>
-                </span>
-                <span class="heart">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                        style="fill: rgba(214, 125, 125, 1);">
-                        <path
-                            d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                    </svg>
-                </span>
-                <span class="heart">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                        style="fill: rgba(214, 125, 125, 1);">
-                        <path
-                            d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
-                    </svg>
-                </span>
+                <script>
+                    const heartsContainer = document.querySelector('.hearts-container');
+            
+                    // Generar 4 corazones dentro del contenedor
+                    for (let i = 0; i < 5; i++) {
+                        heartsContainer.innerHTML += `
+                            <span class="heart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: rgba(214, 125, 125, 1);">
+                                    <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
+                                </svg>
+                            </span>
+                        `;
+                    }
+                </script>
             </div>
         </div>
     </div>
+    <svg id="abrirModal" class="icono-ayuda" xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+            viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" class="feather feather-help-circle" cursor="pointer">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 1 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12" y2="17"></line>
+
+        </svg>
 </div>
 
     <div class ="sub_title">
@@ -71,7 +65,7 @@
         <div class="card" data-country="argentina">Argentina</div>
         <div class="card" data-country="brazil">Brasil</div>
         <div class="card" data-country="peru">Perú</div>
-        <div class="card" data-country="colombia">Colombia</div>
+        <div class="card" data-country="ecuador">ecuador</div>
         <div class="card" data-country="uruguay">Uruguay</div>
 
         <!-- 6 casillas con imágenes de países -->
@@ -79,7 +73,7 @@
         <div class="card hidden" data-country="argentina"><img src="imagen/argentina.png"></div>
         <div class="card hidden" data-country="brazil"><img src="imagen/brazil.png"></div>
         <div class="card hidden" data-country="peru"><img src="imagen/peru.png"></div>
-        <div class="card hidden" data-country="colombia"><img src="imagen/colombia.png"></div>
+        <div class="card hidden" data-country="ecuador"><img src="imagen/colombia.png"></div>
         <div class="card hidden" data-country="uruguay"><img src="imagen/uruguay.png"></div>
     </div>
 
@@ -101,7 +95,23 @@
             </div>
         </div>
     </div>
-
+    <div id="miModal" class="modaldato">
+        <div class="modal-contenido">
+            <div class="cerrar-container">
+                <span class="cerrar">&times;</span>
+            </div>
+            <h2>Paises y banderas </h2>
+            <table class="tabla-verbo">
+                <tr>
+                    <th><img src="imagen/peru.png"></th>
+                    <th>Perú</th>
+                    <th><img src="imagen/EEUU.png"></th>
+                    <th>Estados Unidos</th>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
     <div id="modal" class="modalNext">
         <div class="modalNext-content">
             <p>¡BUEN TRABAJO!</p>
