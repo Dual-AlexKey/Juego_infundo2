@@ -1,165 +1,212 @@
-const gridSize = 14;
-const wordBank = ["NÁHUATL", "INDEPENDENCIA*", "TEQUILA-", "MAYAS!", "PATRIMONIO?", "TOMATE)"];
-const grid = Array(gridSize).fill(null).map(() => Array(gridSize).fill(''));
-let selectedLetters = [];
-let foundWords = [];
-
-// Función para obtener letras aleatorias
-function getRandomLetter() {
-    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    return alphabet[Math.floor(Math.random() * alphabet.length)];
-}
-
-// Verifica si se puede colocar una palabra sin sobreposición
-function canPlaceWord(word, row, col, direction) {
-    const len = word.length;
-
-    for (let i = 0; i < len; i++) {
-        let r = row, c = col;
-
-        if (direction === 'right') c += i;
-        if (direction === 'left') c -= i;
-        if (direction === 'down') r += i;
-        if (direction === 'up') r -= i;
-        if (direction === 'diagonalDownRight') { r += i; c += i; }
-        if (direction === 'diagonalUpLeft') { r -= i; c -= i; }
-
-        if (r < 0 || r >= gridSize || c < 0 || c >= gridSize) return false;
-
-        if (grid[r][c] !== '' && grid[r][c] !== word[i]) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-// Función para obtener una dirección aleatoria
-function getRandomDirection() {
-    const directions = ['right', 'left', 'down', 'up', 'diagonalDownRight', 'diagonalUpLeft'];
-    return directions[Math.floor(Math.random() * directions.length)];
-}
-
-// Coloca las palabras en la cuadrícula
-function placeWord(word) {
-    const len = word.length;
-    let row, col;
-    let canPlace = false;
-
-    while (!canPlace) {
-        row = Math.floor(Math.random() * gridSize);
-        col = Math.floor(Math.random() * gridSize);
-        const direction = getRandomDirection(); // Obtiene una dirección aleatoria
-
-        if (canPlaceWord(word, row, col, direction)) {
-            canPlace = true;
-
-            for (let i = 0; i < len; i++) {
-                if (direction === 'right') grid[row][col + i] = word[i];
-                if (direction === 'left') grid[row][col - i] = word[i];
-                if (direction === 'down') grid[row + i][col] = word[i];
-                if (direction === 'up') grid[row - i][col] = word[i];
-                if (direction === 'diagonalDownRight') grid[row + i][col + i] = word[i];
-                if (direction === 'diagonalUpLeft') grid[row - i][col - i] = word[i];
-            }
-        }
-    }
-}
-
-// Rellena la cuadrícula con letras aleatorias
-function fillGridWithRandomLetters() {
-    for (let row = 0; row < gridSize; row++) {
-        for (let col = 0; col < gridSize; col++) {
-            if (!grid[row][col]) {
-                grid[row][col] = getRandomLetter();
-            }
-        }
-    }
-}
-
-// Renderiza el pupiletras
-function renderGrid() {
+document.addEventListener('DOMContentLoaded', () => {
+    const errorMessage = document.getElementById('error-message');
+    const correctMessage = document.getElementById('correct-message');
+    const modalGameOver = document.getElementById('gameOverModal');
+    const hearts = document.querySelectorAll('.heart');
     const wordSearchContainer = document.getElementById('word-search');
-    wordSearchContainer.innerHTML = '';
+    const reintentarBtn = document.getElementById('reintentarBtn');
+    const salirBtn = document.getElementById('salirBtn');
 
-    grid.forEach((row, rowIndex) => {
-        row.forEach((letter, colIndex) => {
-            const cell = document.createElement('div');
-            cell.className = 'letter';
-            cell.textContent = letter;
-            cell.addEventListener('click', () => toggleLetterSelection(rowIndex, colIndex, cell));
-            wordSearchContainer.appendChild(cell);
-        });
-    });
-}
+    const gridSize = 14;
+    const wordBank = ["NAHUATL", "INDEPENDENCIA", "TEQUILA", "MAYAS", "PATRIMONIO", "TOMATE"];
+    const grid = Array(gridSize).fill(null).map(() => Array(gridSize).fill(''));
+    let selectedLetters = [];
+    let foundWords = [];
+    let lives = 6;
+    let attempts = 0;
+    
+    const audioCorrecto = new Audio('../../audio/correcto.mp3');
+    const audioIncorrecto = new Audio('../../audio/incorrecto.mp3');
+    const audioGameOver = new Audio('../../audio/gameover.mp3');
+   
 
-// Alterna la selección de letras
-function toggleLetterSelection(row, col, cell) {
-    if (cell.classList.contains('found')) return;
 
-    const letter = grid[row][col];
-    const selectedIndex = selectedLetters.findIndex(item => item.row === row && item.col === col);
+    reintentarBtn.addEventListener('click', () => window.location.reload());
+    salirBtn.addEventListener('click', () => window.location.href = '../../index.html');
 
-    if (selectedIndex > -1) {
-        selectedLetters.splice(selectedIndex, 1);
-        cell.classList.remove('selected');
-    } else {
-        selectedLetters.push({ letter, row, col });
-        cell.classList.add('selected');
+    function getRandomLetter() {
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        return alphabet[Math.floor(Math.random() * alphabet.length)];
     }
 
-    checkSelectedWord();
-}
+    function canPlaceWord(word, row, col, direction) {
+        const len = word.length;
 
-// Verifica si la palabra seleccionada está en el banco de palabras
-function checkSelectedWord() {
-    const selectedWord = selectedLetters.map(item => item.letter).join('');
+        for (let i = 0; i < len; i++) {
+            let r = row, c = col;
 
-    if (wordBank.includes(selectedWord) && !foundWords.includes(selectedWord)) {
-        foundWords.push(selectedWord);
-        markWordAsFound();
-        updateWordList(selectedWord);
-        selectedLetters = [];
-    } else if (selectedWord.length > Math.max(...wordBank.map(w => w.length))) {
-        resetSelection();
-    }
-}
+            if (direction === 'right') c += i;
+            if (direction === 'left') c -= i;
+            if (direction === 'down') r += i;
+            if (direction === 'up') r -= i;
+            if (direction === 'diagonalDownRight') { r += i; c += i; }
+            if (direction === 'diagonalUpLeft') { r -= i; c -= i; }
 
-// Marca las letras de una palabra encontrada como "found"
-function markWordAsFound() {
-    selectedLetters.forEach(({ row, col }) => {
-        const cells = document.querySelectorAll('.letter');
-        const cell = cells[row * gridSize + col];
-        cell.classList.add('found');
-        cell.classList.remove('selected');
-    });
-}
-
-// Actualiza la lista de palabras y tacha la encontrada
-function updateWordList(word) {
-    const wordListItems = document.querySelectorAll('#word-list li');
-    wordListItems.forEach(item => {
-        if (item.textContent.toUpperCase() === word.toUpperCase()) {
-            item.style.textDecoration = 'line-through';
+            if (r < 0 || r >= gridSize || c < 0 || c >= gridSize || (grid[r][c] && grid[r][c] !== word[i])) {
+                return false;
+            }
         }
-    });
-}
 
-// Restaura la selección de letras si no coinciden con una palabra
-function resetSelection() {
-    selectedLetters.forEach(({ row, col }) => {
-        const cells = document.querySelectorAll('.letter');
-        const cell = cells[row * gridSize + col];
-        cell.classList.remove('selected');
-    });
-    selectedLetters = [];
-}
+        return true;
+    }
 
-// Coloca las palabras de manera aleatoria
-wordBank.forEach(placeWord);
+    function getRandomDirection() {
+        const directions = ['right', 'left', 'down', 'up', 'diagonalDownRight', 'diagonalUpLeft'];
+        return directions[Math.floor(Math.random() * directions.length)];
+    }
 
-// Rellena el resto de la cuadrícula con letras aleatorias
-fillGridWithRandomLetters();
+    function placeWord(word) {
+        let canPlace = false;
 
-// Renderiza el pupiletras en pantalla
-renderGrid();
+        while (!canPlace) {
+            const row = Math.floor(Math.random() * gridSize);
+            const col = Math.floor(Math.random() * gridSize);
+            const direction = getRandomDirection();
+
+            if (canPlaceWord(word, row, col, direction)) {
+                canPlace = true;
+                for (let i = 0; i < word.length; i++) {
+                    let r = row, c = col;
+
+                    if (direction === 'right') c += i;
+                    if (direction === 'left') c -= i;
+                    if (direction === 'down') r += i;
+                    if (direction === 'up') r -= i;
+                    if (direction === 'diagonalDownRight') { r += i; c += i; }
+                    if (direction === 'diagonalUpLeft') { r -= i; c -= i; }
+
+                    grid[r][c] = word[i];
+                }
+            }
+        }
+    }
+
+    function fillGridWithRandomLetters() {
+        for (let row = 0; row < gridSize; row++) {
+            for (let col = 0; col < gridSize; col++) {
+                if (!grid[row][col]) {
+                    grid[row][col] = getRandomLetter();
+                }
+            }
+        }
+    }
+
+    function renderGrid() {
+        wordSearchContainer.innerHTML = '';
+        grid.forEach((row, rowIndex) => {
+            row.forEach((letter, colIndex) => {
+                const cell = document.createElement('div');
+                cell.className = 'letter';
+                cell.textContent = letter;
+                cell.addEventListener('click', () => toggleLetterSelection(rowIndex, colIndex, cell));
+                wordSearchContainer.appendChild(cell);
+            });
+        });
+    }
+
+    function toggleLetterSelection(row, col, cell) {
+        if (cell.classList.contains('found')) return;
+
+        const letter = grid[row][col];
+        const selectedIndex = selectedLetters.findIndex(item => item.row === row && item.col === col);
+
+        if (selectedIndex > -1) {
+            selectedLetters.splice(selectedIndex, 1);
+            cell.classList.remove('selected');
+        } else {
+            selectedLetters.push({ letter, row, col });
+            cell.classList.add('selected');
+        }
+
+        checkSelectedWord();
+    }
+
+    function checkSelectedWord() {
+        const selectedWord = selectedLetters.map(item => item.letter).join('');
+
+        if (wordBank.includes(selectedWord) && !foundWords.includes(selectedWord)) {
+            foundWords.push(selectedWord);
+            markWordAsFound();
+            audioCorrecto.play();
+            updateWordList(selectedWord);
+            attempts++
+            if (attempts==6){
+                showModal()
+            }
+            selectedLetters = [];
+        } else if (selectedWord.length > Math.max(...wordBank.map(w => w.length))) {
+            loseLife();
+            resetSelection();
+            audioIncorrecto.play();
+        }
+    }
+
+    function markWordAsFound() {
+        selectedLetters.forEach(({ row, col }) => {
+            const cells = document.querySelectorAll('.letter');
+            const cell = cells[row * gridSize + col];
+            cell.classList.add('found');
+            cell.classList.remove('selected');
+        });
+    }
+
+    function updateWordList(word) {
+        const wordListItems = document.querySelectorAll('#word-list li');
+        wordListItems.forEach(item => {
+            if (item.textContent.toUpperCase() === word.toUpperCase()) {
+                item.style.textDecoration = 'line-through';
+            }
+        });
+    }
+
+    function resetSelection() {
+        selectedLetters.forEach(({ row, col }) => {
+            const cells = document.querySelectorAll('.letter');
+            const cell = cells[row * gridSize + col];
+            cell.classList.remove('selected');
+        });
+        selectedLetters = [];
+    }
+
+    function loseLife() {
+        if (lives > 0) {
+            lives--;
+            hearts[lives].style.display = 'none';
+            if (lives === 0) {
+                mostrarGameOver();
+                showModal(modalGameOver);
+            }
+        }
+    }
+
+    function showModal() {
+        const arrowIcon = document.getElementById('arrow-icon');
+        const modal = document.getElementById("modal");
+        if (modal) {
+            modal.style.display = "flex";
+            modal.classList.add("show");
+            arrowIcon.style.display = 'inline-block';
+            arrowIcon.addEventListener('click', function() {
+                window.location.href = '../Juego2/game2.html';
+            });
+
+            setTimeout(() => {
+                modal.classList.remove("show");
+                modal.classList.add("hide");
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    modal.classList.remove("hide");
+                }, 500);
+            }, 1000); // Mostrar durante 10 segundos
+        }
+    }
+
+    function mostrarGameOver() {
+        modalGameOver.style.display = 'block';
+        audioGameOver.play();
+    }
+
+    wordBank.forEach(placeWord);
+    fillGridWithRandomLetters();
+    renderGrid();
+});
