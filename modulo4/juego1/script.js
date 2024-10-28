@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const sentences = shuffleSentences([
-        { words: ["ayer", "estaba", "en", "mi", "casa"], correctOrder: "ayer estaba en mi casa" },
-        { words: ["he", "estado", "en", "la", "cocina"], correctOrder: "he estado en la cocina" },
-        { words: ["Mañana", "estaré", "en", "el", "parque"], correctOrder: "Mañana estaré en el parque" },
-        { words: ["He", "estado", "trabajando", "todo", "el", "día"], correctOrder: "He estado trabajando todo el día" }
+        { words: ["ayer", "estuve", "en", "mi", "casa"], correctOrder: "ayer estuve en mi casa" },
+        { words: ["he", "estado", "en", "la", "cocina", "toda", "la", "mañana"], correctOrder: "he estado en la cocina toda la mañana" },
+        { words: ["mañana", "estaré", "en", "el", "parque", "con", "mis", "amigos"], correctOrder: "mañana estaré en el parque con mis amigos" },
+        { words: ["estuve", "trabajando", "todo", "el", "día", "en", "ese", "proyecto"], correctOrder: "estuve trabajando todo el día en ese proyecto" }
     ]);
 
     function loadSentence() {
