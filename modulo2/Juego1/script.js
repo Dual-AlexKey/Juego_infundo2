@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalGameOver = document.getElementById('gameOverModal');
     const hearts = document.querySelectorAll('.heart');
     const wordSearchContainer = document.getElementById('word-search');
+    const wordList = document.querySelectorAll('#word-list li');
     const reintentarBtn = document.getElementById('reintentarBtn');
     const salirBtn = document.getElementById('salirBtn');
 
@@ -14,12 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let foundWords = [];
     let lives = 6;
     let attempts = 0;
-    
+
     const audioCorrecto = new Audio('../../audio/correcto.mp3');
     const audioIncorrecto = new Audio('../../audio/incorrecto.mp3');
     const audioGameOver = new Audio('../../audio/gameover.mp3');
-   
-
 
     reintentarBtn.addEventListener('click', () => window.location.reload());
     salirBtn.addEventListener('click', () => window.location.href = '../../index.html');
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function canPlaceWord(word, row, col, direction) {
         const len = word.length;
-
         for (let i = 0; i < len; i++) {
             let r = row, c = col;
 
@@ -46,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -56,18 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function placeWord(word) {
-        let canPlace = false;
-
-        while (!canPlace) {
+        let placed = false;
+        while (!placed) {
             const row = Math.floor(Math.random() * gridSize);
             const col = Math.floor(Math.random() * gridSize);
             const direction = getRandomDirection();
-
             if (canPlaceWord(word, row, col, direction)) {
-                canPlace = true;
                 for (let i = 0; i < word.length; i++) {
                     let r = row, c = col;
-
                     if (direction === 'right') c += i;
                     if (direction === 'left') c -= i;
                     if (direction === 'down') r += i;
@@ -77,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     grid[r][c] = word[i];
                 }
+                placed = true;
             }
         }
     }
@@ -123,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkSelectedWord() {
         const selectedWord = selectedLetters.map(item => item.letter).join('');
-
         if (wordBank.includes(selectedWord) && !foundWords.includes(selectedWord)) {
             foundWords.push(selectedWord);
             markWordAsFound();
@@ -151,8 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateWordList(word) {
-        const wordListItems = document.querySelectorAll('#word-list li');
-        wordListItems.forEach(item => {
+        wordList.forEach(item => {
             if (item.textContent.toUpperCase() === word.toUpperCase()) {
                 item.style.textDecoration = 'line-through';
             }
@@ -180,16 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showModal() {
-        const arrowIcon = document.getElementById('arrow-icon');
         const modal = document.getElementById("modal");
         if (modal) {
             modal.style.display = "flex";
             modal.classList.add("show");
-            arrowIcon.style.display = 'inline-block';
-            arrowIcon.addEventListener('click', function() {
-                window.location.href = '../Juego2/game2.html';
-            });
-
             setTimeout(() => {
                 modal.classList.remove("show");
                 modal.classList.add("hide");
@@ -197,15 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     modal.style.display = "none";
                     modal.classList.remove("hide");
                 }, 500);
-            }, 1000); // Mostrar durante 10 segundos
+            }, 1000);
         }
     }
 
-    function mostrarGameOver() {
-        modalGameOver.style.display = 'block';
-        audioGameOver.play();
-    }
-
+    
     wordBank.forEach(placeWord);
     fillGridWithRandomLetters();
     renderGrid();
