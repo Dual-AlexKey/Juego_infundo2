@@ -66,26 +66,37 @@ document.addEventListener('DOMContentLoaded', function () {
     function placeWord() {
         if (!selectedButton) return;
 
+        // Define o incrementa el contador de intentos específico para cada botón
+        selectedButton.attempts = selectedButton.attempts ? selectedButton.attempts + 1 : 1;
+        
         const buttonWord = selectedButton.dataset.word;
         const containerWord = this.dataset.word;
-
+        
         if (buttonWord === containerWord) {
             const buttonClone = selectedButton.cloneNode(true);
             this.innerHTML = ''; // Elimina cualquier contenido existente en el contenedor
             this.appendChild(buttonClone); // Agrega el clon del botón al contenedor
             playSound(audioCorrecto); // Reproduce el sonido antes de realizar las operaciones
             this.classList.add('correct');
-            selectedButton.classList.add('destroyed');
             correctMatches++;
             checkCompletion();
+            if (selectedButton.attempts >= 2) {
+                selectedButton.classList.add('destroyed'); // Aplica la clase de bloqueo
+                selectedButton.disabled = true; // Desactiva el botón para que no se pueda volver a seleccionar
+            }
         } else {
             playSound(audioIncorrecto); // Reproduce el sonido antes de realizar las operaciones
             attempts++;
             updateLives();
         }
-
+        
+        // Verifica si el botón ha sido seleccionado dos veces
+       
+        
+        // Restablece la selección
         selectedButton.classList.remove('selected');
         selectedButton = null;
+        
     }
 
 
