@@ -125,6 +125,29 @@ document.addEventListener('DOMContentLoaded', () => {
             attempts++
             if (attempts==6){
                 showModal()
+
+                const arrowIcon = document.getElementById('arrow-icon');
+                const modal = document.getElementById("modal");
+                if (modal) {  // Verificación adicional
+                    modal.style.display = "flex";
+                    modal.classList.add("show");
+                    arrowIcon.style.display = 'inline-block';
+                    arrowIcon.addEventListener('click', function() {
+                        window.location.href = '../juego2/game2.html';
+                    });
+        
+                    // Ocultar el modal después de 10 segundos
+                    setTimeout(() => {
+                        modal.classList.remove("show");
+                        modal.classList.add("hide");
+                        setTimeout(() => {
+                            modal.style.display = "none";
+                            modal.classList.remove("hide");
+                        }, 500); 
+                    }, 1000); // 10000 milisegundos = 10 segundos
+                } else {
+                    console.error('El elemento con el ID "modal" no existe en el DOM.');
+                }
             }
             selectedLetters = [];
         } else if (selectedWord.length > Math.max(...wordBank.map(w => w.length))) {

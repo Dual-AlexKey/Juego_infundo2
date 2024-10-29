@@ -40,9 +40,6 @@ body {
     border-radius: 10px;
 }
 
-.imagendato {
-    display: none;
-}
 
 .info p {
     display: none;
@@ -86,7 +83,7 @@ body {
     display: inline-block;
     vertical-align: middle;
     width: 130px;
-    height: 40px;
+    height: 50px;
     border: 1px solid #000;
     margin: 0 2px;
     border-radius: 2cap;
@@ -104,7 +101,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 130px;
-    height: 40px;
+    height: 50px;
     border-radius: 2cap;
     font-size: 18px;
 }
@@ -416,6 +413,7 @@ ul li {
     fill: #655d5d;
 }
 
+
 #sound-icon{
     position: fixed;
     bottom: 20px;
@@ -437,90 +435,8 @@ ul li {
     }
 }
 
-@media (min-width: 1540px) {
 
-
-    body {
-        margin: 0;
-    }
-
-    .container {
-        max-width: 1289px;
-        height: 100px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .modalNext-content p{
-        font-size: 1.5em;
-    }
-    .texto {
-        font-size: 18px;
-    }
-
-    .imagendato {
-        display: flex;
-        position: absolute;
-        width: 250px;
-        height: auto;
-        margin-left: 75%;
-        margin-top: 8%;
-        animation: zoomAnimacion 5s infinite alternate;
-    }
-
-    .info {
-        margin-left: auto;
-        padding: 7px;
-        width: 120px;
-        height: 20px;
-        align-items: center;
-        border: 2px solid #FFFFFF;
-        display: flex;
-        background-color: #FFFFFF;
-        border-radius: 10px;
-    }
-
-    .info p {
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
-        font-weight: 800;
-        display: block;
-    }
-
-    .info svg {
-        width: 20px;
-        height: 20px;
-        margin-left: 5px;
-    }
-
-    .oraciones {
-        margin-left: 15%;
-        margin-top: 30px;
-        float: left;
-    }
-
-    .oraciones p {
-        font-size: 25px;
-        margin-bottom: 75px;
-    }
-
-    .botones {
-        margin-top: 50px;
-        margin-right: 30%;
-        float: right;
-        flex-direction: column;
-        font-size: 10%
-    }
-
-    .botones button {
-        margin-bottom: 65px;
-        width: 150px; /* Ajustar el tamaño de los botones */
-        height: 50px;
-    }
-
-   
-    
-}
-@media (max-width: 1540px) {
+@media (max-width: 3040px) {
 
     body {
         margin: 0;
@@ -544,11 +460,13 @@ ul li {
 
     .imagendato {
         display: flex;
-        position: relative; /* Ajustar posición */
-        width: 190px; /* Reducir ancho de la imagen */
-        height: auto;
-        margin-left: 75%;
-        margin-top: -30%; /* Centrar imagen y ajustar margen superior */
+        justify-content: center; /* Centra horizontalmente dentro del contenedor */
+        align-items: center; /* Centra verticalmente dentro del contenedor */
+        position: relative;
+        width: 20vw; /* Cambia el ancho de la imagen según el ancho de la pantalla */
+        max-width: 190px;
+        margin-top: -30vw;
+        margin-left: 76vw;
         animation: zoomAnimacion 5s infinite alternate;
     }
 
@@ -599,7 +517,7 @@ ul li {
     .botones button {
         margin-bottom: 20px;
         width: 150px; /* Ajustar el tamaño de los botones */
-        height: 45px;
+        height: 60px;
     }
     
 

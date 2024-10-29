@@ -102,7 +102,12 @@ document.addEventListener('DOMContentLoaded', () => {
     salirBtn.addEventListener('click', () => {
         window.location.href = '../../index.html';
     });
-
+    function showGameOver() {
+        const gameOverModal = document.querySelector('#gameOverModal');
+        gameOverModal.style.display = 'block';
+        document.querySelector('#reintentarBtn').addEventListener('click', () => location.reload());
+        document.querySelector('#salirBtn').addEventListener('click', () => window.location.href = '../../index.html');
+    }
     document.getElementById('check-button').addEventListener('click', () => {
         const constructedSentence = selectedWords.join(' ').trim();
         const correctSentence = sentences[currentSentenceIndex].correctOrder.trim();
@@ -130,7 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 result.innerText = "¡Game Over!";
                 result.style.color = 'red';
-                showModal(modalGameOver); // Mostrar modal de Game Over
+                showGameOver() // Mostrar modal de Game Over
+                audioGameOver.play()
                 document.getElementById('check-button').disabled = true;
             }
         }
