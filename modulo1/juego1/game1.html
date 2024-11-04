@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reto 1</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="./modal/syle.css">
+    <link rel="stylesheet" href="../../modal/syle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="shortcut icon" href="../imagen/logo.ico" type="imagen/x-icon">
+    <link rel="shortcut icon" href="../../imagen/logo.ico" type="imagen/x-icon">
 </head>
 <body>
 <div class="Contai_Titulo">
@@ -31,7 +31,6 @@
                 <script>
                     const heartsContainer = document.querySelector('.hearts-container');
             
-                    // Generar 4 corazones dentro del contenedor
                     for (let i = 0; i < 6; i++) {
                         heartsContainer.innerHTML += `
                             <span class="heart">
@@ -69,12 +68,12 @@
         <div class="card" data-country="uruguay">Uruguay</div>
 
         <!-- 6 casillas con imágenes de países -->
-        <div class="card hidden" data-country="chile"><img src="imagen/chile.png"></div>
-        <div class="card hidden" data-country="argentina"><img src="imagen/argentina.png"></div>
-        <div class="card hidden" data-country="brazil"><img src="imagen/brazil.png"></div>
-        <div class="card hidden" data-country="peru"><img src="imagen/peru.png"></div>
-        <div class="card hidden" data-country="ecuador"><img src="imagen/colombia.png"></div>
-        <div class="card hidden" data-country="uruguay"><img src="imagen/uruguay.png"></div>
+        <div class="card hidden" data-country="chile"><img src="../../imagen/chile.png"></div>
+        <div class="card hidden" data-country="argentina"><img src="../../imagen/argentina.png"></div>
+        <div class="card hidden" data-country="brazil"><img src="../../imagen/brazil.png"></div>
+        <div class="card hidden" data-country="peru"><img src="../../imagen/peru.png"></div>
+        <div class="card hidden" data-country="ecuador"><img src="../../imagen/colombia.png"></div>
+        <div class="card hidden" data-country="uruguay"><img src="../../imagen/uruguay.png"></div>
     </div>
 
     <!--Mensajes de Finalizacion del juego-->
@@ -103,9 +102,9 @@
             <h2>Paises y banderas</h2>
             <table class="tabla-verbo">
                 <tr>
-                    <th><img src="imagen/peru.png"></th>
+                    <th><img src="../../imagen/peru.png"></th>
                     <th>Perú</th>
-                    <th><img src="imagen/EEUU.png"></th>
+                    <th><img src="../../imagen/EEUU.png"></th>
                     <th>Estados Unidos</th>
                 </tr>
                 
@@ -157,12 +156,7 @@
         <source src="../audio/level.mp3" type="audio/mp3">
     </audio>
 
-    <audio id="audioCorrecto" src="../audio/correcto.mp3"></audio>
-    <audio id="audioIncorrecto" src="../audio/incorrecto.mp3"></audio>
-    <audio id="audioGameOver" src="../audio/gameover.mp3"></audio>
-
-
-    <script src="script.js"></script>
+       <script src="script.js"></script>
 
 </body>
 </html>

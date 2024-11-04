@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = Array(gridSize).fill(null).map(() => Array(gridSize).fill(''));
     let selectedLetters = [];
     let foundWords = [];
-    let lives = 6;
+    let lives = 3;
     let attempts = 0;
 
     const audioCorrecto = new Audio('../../audio/correcto.mp3');
@@ -189,10 +189,15 @@ document.addEventListener('DOMContentLoaded', () => {
             hearts[lives].style.display = 'none';
             if (lives === 0) {
                 mostrarGameOver();
-                showModal(modalGameOver);
             }
         }
     }
+    function mostrarGameOver() {
+        modalGameOver.style.display = 'flex'; // Asegúrate de que el estilo es "flex" o el necesario para mostrarlo
+        modalGameOver.classList.add("show");
+        audioGameOver.play(); // Reproduce el audio de Game Over si es necesario
+    }
+    
 
     function showModal() {
         const modal = document.getElementById("modal");
